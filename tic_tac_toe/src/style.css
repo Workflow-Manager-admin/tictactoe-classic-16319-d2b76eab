@@ -94,3 +94,98 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* ---- TicTacToe Classic custom styles ---- */
+.ttt-outer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff; /* primary */
+  border-radius: 18px;
+  box-shadow: 0 2px 18px 0 rgba(0,0,0,0.08);
+  padding: 2.5em 2em 2em 2em;
+  max-width: 350px;
+  margin: 42px auto;
+}
+
+.ttt-board {
+  display: grid;
+  grid-template-columns: repeat(3, 72px);
+  grid-template-rows: repeat(3, 72px);
+  gap: 12px;
+  margin-bottom: 24px;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+}
+
+.ttt-cell {
+  width: 72px;
+  height: 72px;
+  font-size: 2.2rem;
+  font-weight: 700;
+  background: #ffffff;
+  color: #222222; /* secondary */
+  border: 2.5px solid #4caf50; /* accent */
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background 0.14s, color 0.13s, border-color 0.13s;
+  outline: none;
+  box-shadow: 0 1px 4px 0 rgba(76,175,80,0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ttt-cell:disabled {
+  background: #e6e6e6;
+  color: #bdbdbd;
+  cursor: default;
+  border-color: #dddddd;
+}
+.ttt-cell-win {
+  background: #4caf50 !important;
+  color: #ffffff !important;
+  border-color: #388e3c !important;
+  animation: ttt-winblip 0.8s ease-in-out;
+}
+@keyframes ttt-winblip {
+  0% { box-shadow: 0 0 0 0 #4caf5055; }
+  80% { box-shadow: 0 0 16px 7px #4caf5077;}
+  100% { box-shadow: 0 0 0 0 #4caf5000;}
+}
+
+.ttt-status {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+  color: #222222;
+  min-height: 1.7em;
+}
+.ttt-winmsg {
+  color: #4caf50;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.ttt-drawmsg {
+  color: #222222;
+  opacity: 0.67;
+  font-style: italic;
+}
+
+.ttt-reset {
+  margin-top: 6px;
+  padding: 0.55em 1.6em;
+  font-size: 1.04em;
+  font-weight: 600;
+  color: #ffffff;
+  background: #4caf50;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  box-shadow: 0 1.5px 6px 0 rgba(76,175,80,0.06);
+  transition: background 0.18s;
+  outline: none;
+}
+.ttt-reset:hover, .ttt-reset:focus {
+  background: #388e3c;
+}
